@@ -101,16 +101,10 @@ Business Reports and Strategic Recommendations
 
 ## Run The Project
 
-Install dependencies:
+Install lightweight Streamlit dashboard dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
-
-Regenerate all datasets, reports, forecasts, notebooks, and warehouse tables:
-
-```bash
-python scripts/run_pipeline.py
 ```
 
 Launch the Streamlit application:
@@ -119,11 +113,35 @@ Launch the Streamlit application:
 streamlit run streamlit_app/app.py
 ```
 
+Install full local pipeline dependencies only when regenerating datasets, reports, forecasts, notebooks, and warehouse tables:
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+Regenerate the full analytical pipeline:
+
+```bash
+python scripts/run_pipeline.py
+```
+
 Local dashboard URL:
 
 ```text
 http://localhost:8501
 ```
+
+## Streamlit Cloud Deployment
+
+Use these settings in Streamlit Cloud:
+
+```text
+Repository: felixsihite/hotel-booking-analytics-demand-intelligence
+Branch: main
+Main file path: streamlit_app/app.py
+```
+
+`requirements.txt` is intentionally lightweight for faster Streamlit Cloud deployment. Full analytics dependencies are kept in `requirements-dev.txt` for local regeneration work.
 
 ## Streamlit Application
 
