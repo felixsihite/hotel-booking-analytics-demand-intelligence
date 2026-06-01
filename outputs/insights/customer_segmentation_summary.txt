@@ -1,0 +1,6 @@
+Customer Segmentation Summary
+=============================
+Highest value segment: GBR | Offline TA/TO | Contract (Long-lead cancellation watchlist).
+Customer value score: 78.6; realized revenue: 882,124.96; cancellation rate: 0.1%.
+
+Commercial action: prioritize retention, direct-channel migration, and targeted offers for reliable high-value segments while applying risk controls to volatile long-lead groups.

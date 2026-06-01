@@ -1,0 +1,89 @@
+table,column,dtype,non_null_rate,business_definition
+hotel_bookings_cleaned,booking_id,int64,1.0,Unique analytical booking identifier generated during preprocessing.
+hotel_bookings_cleaned,hotel,object,1.0,Hotel type: City Hotel or Resort Hotel.
+hotel_bookings_cleaned,is_canceled,int64,1.0,Cancellation flag where 1 means canceled and 0 means not canceled.
+hotel_bookings_cleaned,lead_time,int64,1.0,Number of days between booking creation and arrival date.
+hotel_bookings_cleaned,arrival_date_year,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_date_month,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_date_week_number,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_date_day_of_month,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,stays_in_weekend_nights,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,stays_in_week_nights,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,adults,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,children,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,babies,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,meal,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,country,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,market_segment,object,1.0,Commercial market segment for the reservation.
+hotel_bookings_cleaned,distribution_channel,object,1.0,Booking distribution channel.
+hotel_bookings_cleaned,is_repeated_guest,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,previous_cancellations,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,previous_bookings_not_canceled,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,reserved_room_type,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,assigned_room_type,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,booking_changes,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,deposit_type,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,agent,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,company,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,days_in_waiting_list,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,customer_type,object,1.0,Customer contract or booking type.
+hotel_bookings_cleaned,adr,float64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,required_car_parking_spaces,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,total_of_special_requests,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,reservation_status,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,reservation_status_date,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_month_number,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_date,datetime64[ns],1.0,Constructed guest arrival date.
+hotel_bookings_cleaned,arrival_year_month,object,1.0,Arrival period in YYYY-MM format.
+hotel_bookings_cleaned,arrival_quarter,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,arrival_day_name,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,season,object,1.0,Arrival season derived from arrival month.
+hotel_bookings_cleaned,has_agent,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,has_company,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,total_guests,int64,1.0,"Total adults, children, and babies."
+hotel_bookings_cleaned,total_nights,int64,1.0,Weekend nights plus week nights.
+hotel_bookings_cleaned,weekend_share,float64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,is_family_booking,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,room_type_changed,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,is_transient,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,is_group_or_contract,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,zero_guest_flag,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,zero_night_flag,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,negative_adr_flag,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,extreme_lead_time_flag,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,adr_outlier_flag,int64,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,adr_clean,float64,1.0,Cleaned average daily rate after negative values and extreme outliers are handled.
+hotel_bookings_cleaned,lead_time_band,object,1.0,Business-friendly lead-time category.
+hotel_bookings_cleaned,stay_length_band,object,1.0,Source or engineered analytical field.
+hotel_bookings_cleaned,guest_size_segment,object,1.0,Guest-size category for customer behavior analysis.
+hotel_bookings_cleaned,gross_booking_value,float64,1.0,Estimated booking value using cleaned ADR multiplied by total nights.
+hotel_bookings_cleaned,realized_room_nights,int64,1.0,Room nights retained from non-canceled bookings.
+hotel_bookings_cleaned,canceled_room_nights,int64,1.0,Room nights lost to canceled bookings.
+hotel_bookings_cleaned,realized_revenue,float64,1.0,Estimated revenue retained from non-canceled bookings.
+hotel_bookings_cleaned,lost_revenue_estimate,float64,1.0,Estimated revenue exposure from canceled bookings.
+hotel_bookings_cleaned,booking_reliability_score,int64,1.0,"Composite reliability score based on cancellation, lead time, prior cancellation, repeat guest, and special request signals."
+hotel_bookings_cleaned,cancellation_risk_tier,object,1.0,"Low, Moderate, High, or Critical cancellation risk grouping."
+monthly_demand,hotel,object,1.0,Hotel type: City Hotel or Resort Hotel.
+monthly_demand,arrival_year_month,object,1.0,Arrival period in YYYY-MM format.
+monthly_demand,arrival_date,datetime64[ns],1.0,Constructed guest arrival date.
+monthly_demand,bookings,int64,1.0,Source or engineered analytical field.
+monthly_demand,cancellations,int64,1.0,Source or engineered analytical field.
+monthly_demand,room_nights_requested,int64,1.0,Source or engineered analytical field.
+monthly_demand,room_nights_realized,int64,1.0,Source or engineered analytical field.
+monthly_demand,room_nights_canceled,int64,1.0,Source or engineered analytical field.
+monthly_demand,gross_booking_value,float64,1.0,Estimated booking value using cleaned ADR multiplied by total nights.
+monthly_demand,realized_revenue,float64,1.0,Estimated revenue retained from non-canceled bookings.
+monthly_demand,lost_revenue_estimate,float64,1.0,Estimated revenue exposure from canceled bookings.
+monthly_demand,adr,float64,1.0,Source or engineered analytical field.
+monthly_demand,average_lead_time,float64,1.0,Source or engineered analytical field.
+monthly_demand,total_guests,int64,1.0,"Total adults, children, and babies."
+monthly_demand,repeat_guest_rate,float64,1.0,Source or engineered analytical field.
+monthly_demand,special_request_rate,float64,1.0,Source or engineered analytical field.
+monthly_demand,cancellation_rate,float64,1.0,Source or engineered analytical field.
+monthly_demand,capacity_room_night_proxy,float64,1.0,Source or engineered analytical field.
+monthly_demand,occupancy_rate_estimate,float64,1.0,Estimated occupancy using realized room nights divided by capacity proxy.
+monthly_demand,revenue_opportunity_index,float64,1.0,"Composite opportunity metric combining occupancy gap, cancellation rate, and lost revenue share."
+monthly_demand,revpar_estimate,float64,1.0,Estimated revenue per available room using realized revenue divided by capacity proxy.
+monthly_demand,year,int64,1.0,Source or engineered analytical field.
+monthly_demand,month,int64,1.0,Source or engineered analytical field.
+monthly_demand,month_name,object,1.0,Source or engineered analytical field.

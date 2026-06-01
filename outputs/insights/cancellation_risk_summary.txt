@@ -1,0 +1,6 @@
+Cancellation Risk Summary
+=========================
+Highest-risk segment: City Hotel | Groups | TA/TO | Non Refund | 6-12 months.
+Cancellation rate: 100.0%; estimated lost revenue: 626,676.50.
+
+Business action: apply risk-based overbooking guardrails, earlier confirmation outreach, and deposit or prepayment tests for high-risk long-lead segments.

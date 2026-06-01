@@ -1,0 +1,2 @@
+total_bookings,date_min,date_max,cancellation_rate,estimated_occupancy_rate,realized_revenue,lost_revenue_estimate,room_nights_realized,average_daily_rate,revpar_estimate,average_lead_time,repeat_guest_rate,revenue_opportunity_index
+119210,2015-07-01,2017-08-31,0.3708,0.7225,25937427.09,16690704.74,254292.0,101.77,73.69,104.11,0.0315,0.309

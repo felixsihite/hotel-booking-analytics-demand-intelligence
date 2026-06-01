@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+rsconnect/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# SQLite transient files
+*.sqlite-shm
+*.sqlite-wal
+
+# Local app/runtime artifacts
+.streamlit_server.pid
+*.log
+outputs/reports/chrome-*/
+outputs/reports/*profile*/
+
+# Local secrets
+.env
+.env.*

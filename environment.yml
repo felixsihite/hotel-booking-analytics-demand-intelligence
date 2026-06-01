@@ -1,0 +1,17 @@
+name: hotel-booking-analytics
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pandas
+  - numpy
+  - pyarrow
+  - streamlit
+  - matplotlib
+  - seaborn
+  - plotly
+  - scikit-learn
+  - pyyaml
+  - pip
+  - pip:
+      - prophet

@@ -1,0 +1,26 @@
+{
+  "booking_demand": {
+    "target": "y_booking_demand",
+    "model": "Prophet",
+    "rmse": 2521.9279,
+    "mae": 1955.2445,
+    "mape": 35.2232,
+    "holdout_months": 6
+  },
+  "occupancy_rate": {
+    "target": "y_occupancy_rate",
+    "model": "Prophet",
+    "rmse": 0.324,
+    "mae": 0.2265,
+    "mape": 22.6456,
+    "holdout_months": 6
+  },
+  "revenue": {
+    "target": "y_revenue",
+    "model": "Prophet",
+    "rmse": 437181.035,
+    "mae": 362984.4682,
+    "mape": 29.3369,
+    "holdout_months": 6
+  }
+}

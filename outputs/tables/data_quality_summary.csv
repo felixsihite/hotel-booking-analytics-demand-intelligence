@@ -1,0 +1,11 @@
+check,value,interpretation
+Raw rows,119390,Reference input volume
+Processed booking rows,119210,Cleaned analytical booking rows
+Removed invalid rows,180,"Rows removed during preprocessing, primarily invalid guest records"
+Processed duplicate booking_id,0,Should be 0
+Missing arrival_date,0,Should be 0
+Zero guest records,0,Should be 0 after cleaning
+Negative ADR after cleaning,0,Should be 0
+ADR outlier flags retained,589,Flags retained for auditability
+Monthly demand rows,52,Hotel-month analytical mart
+Forecast input rows,26,Monthly time-series rows

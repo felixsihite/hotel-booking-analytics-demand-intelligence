@@ -1,0 +1,6 @@
+Booking Intelligence Summary
+============================
+Top revenue segment/channel: Online TA via TA/TO.
+Bookings: 56,087; Realized revenue: 13,622,546.32; Cancellation rate: 36.9%.
+
+Operational implication: prioritize reliable high-volume acquisition channels, monitor long-lead bookings separately, and align staffing around high-arrival months.
