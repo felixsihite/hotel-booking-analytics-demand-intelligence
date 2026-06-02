@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import booking_analysis
+import build_streamlit_data
 import cancellation_analysis
 import customer_segmentation
 import data_cleaning
@@ -34,6 +35,7 @@ def main() -> None:
     visualization.create_all_charts()
     run_script("demand_forecasting.py")
     generate_business_reports.run()
+    build_streamlit_data.run()
     run_script("generate_notebooks.py")
     print("Full hospitality analytics pipeline completed. Launch the dashboard with: streamlit run streamlit_app/app.py")
 

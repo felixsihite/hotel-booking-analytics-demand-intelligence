@@ -1,0 +1,62 @@
+{
+  "purpose": "Compact Streamlit Cloud deployment data package",
+  "source": "Generated from local processed analytics outputs",
+  "files": [
+    {
+      "file": "booking_demand_forecast.csv",
+      "size_mb": 0.0009
+    },
+    {
+      "file": "booking_source_scorecard.csv",
+      "size_mb": 0.0029
+    },
+    {
+      "file": "bookings_app.csv.gz",
+      "size_mb": 1.3904
+    },
+    {
+      "file": "cancellation_risk_matrix.csv",
+      "size_mb": 0.0132
+    },
+    {
+      "file": "customer_persona_segments.csv",
+      "size_mb": 0.0294
+    },
+    {
+      "file": "customer_segment_performance.csv",
+      "size_mb": 0.0726
+    },
+    {
+      "file": "forecast_accuracy_metrics.json",
+      "size_mb": 0.0005
+    },
+    {
+      "file": "forecasting_input_monthly.csv",
+      "size_mb": 0.0045
+    },
+    {
+      "file": "kpi_summary.json",
+      "size_mb": 0.0004
+    },
+    {
+      "file": "monthly_demand.csv",
+      "size_mb": 0.0136
+    },
+    {
+      "file": "occupancy_rate_forecast.csv",
+      "size_mb": 0.0009
+    },
+    {
+      "file": "revenue_forecast.csv",
+      "size_mb": 0.0009
+    },
+    {
+      "file": "revenue_optimization_plan.csv",
+      "size_mb": 0.0177
+    },
+    {
+      "file": "seasonal_occupancy_scorecard.csv",
+      "size_mb": 0.0026
+    }
+  ]
+}

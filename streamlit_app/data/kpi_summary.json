@@ -1,0 +1,15 @@
+{
+  "total_bookings": 119210,
+  "date_min": "2015-07-01",
+  "date_max": "2017-08-31",
+  "cancellation_rate": 0.3708,
+  "estimated_occupancy_rate": 0.7225,
+  "realized_revenue": 25937427.09,
+  "lost_revenue_estimate": 16690704.74,
+  "room_nights_realized": 254292.0,
+  "average_daily_rate": 101.77,
+  "revpar_estimate": 73.69,
+  "average_lead_time": 104.11,
+  "repeat_guest_rate": 0.0315,
+  "revenue_opportunity_index": 0.309
+}

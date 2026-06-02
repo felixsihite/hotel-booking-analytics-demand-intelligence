@@ -13,6 +13,7 @@ import streamlit as st
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+APP_DATA_DIR = Path(__file__).resolve().parent / "data"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 TABLES_DIR = OUTPUTS_DIR / "tables"
@@ -79,21 +80,55 @@ def apply_chart_theme(fig: go.Figure, height: int = 440) -> go.Figure:
     return fig
 
 
+def data_path(file_name: str, fallback: Path) -> Path:
+    app_ready_path = APP_DATA_DIR / file_name
+    return app_ready_path if app_ready_path.exists() else fallback
+
+
 @st.cache_data(show_spinner=False)
 def load_data() -> dict[str, pd.DataFrame | dict]:
-    bookings = pd.read_csv(PROCESSED_DIR / "hotel_bookings_cleaned.csv", parse_dates=["arrival_date"])
-    monthly = pd.read_csv(PROCESSED_DIR / "monthly_demand.csv", parse_dates=["arrival_date"])
-    segments = pd.read_csv(PROCESSED_DIR / "customer_segment_performance.csv")
-    source_scorecard = pd.read_csv(TABLES_DIR / "booking_source_scorecard.csv")
-    risk_matrix = pd.read_csv(TABLES_DIR / "cancellation_risk_matrix.csv")
-    personas = pd.read_csv(TABLES_DIR / "customer_persona_segments.csv")
-    revenue_plan = pd.read_csv(TABLES_DIR / "revenue_optimization_plan.csv", parse_dates=["arrival_date"])
-    seasonal_scorecard = pd.read_csv(TABLES_DIR / "seasonal_occupancy_scorecard.csv")
-    booking_forecast = pd.read_csv(FORECAST_DIR / "booking_demand_forecast.csv", parse_dates=["ds"])
-    occupancy_forecast = pd.read_csv(FORECAST_DIR / "occupancy_rate_forecast.csv", parse_dates=["ds"])
-    revenue_forecast = pd.read_csv(FORECAST_DIR / "revenue_forecast.csv", parse_dates=["ds"])
-    forecast_metrics = json.loads((FORECAST_DIR / "forecast_accuracy_metrics.json").read_text(encoding="utf-8"))
-    kpis = json.loads((INSIGHTS_DIR / "kpi_summary.json").read_text(encoding="utf-8"))
+    bookings = pd.read_csv(
+        data_path("bookings_app.csv.gz", PROCESSED_DIR / "hotel_bookings_cleaned.csv"),
+        parse_dates=["arrival_date"],
+    )
+    monthly = pd.read_csv(
+        data_path("monthly_demand.csv", PROCESSED_DIR / "monthly_demand.csv"),
+        parse_dates=["arrival_date"],
+    )
+    segments = pd.read_csv(
+        data_path("customer_segment_performance.csv", PROCESSED_DIR / "customer_segment_performance.csv")
+    )
+    source_scorecard = pd.read_csv(
+        data_path("booking_source_scorecard.csv", TABLES_DIR / "booking_source_scorecard.csv")
+    )
+    risk_matrix = pd.read_csv(data_path("cancellation_risk_matrix.csv", TABLES_DIR / "cancellation_risk_matrix.csv"))
+    personas = pd.read_csv(data_path("customer_persona_segments.csv", TABLES_DIR / "customer_persona_segments.csv"))
+    revenue_plan = pd.read_csv(
+        data_path("revenue_optimization_plan.csv", TABLES_DIR / "revenue_optimization_plan.csv"),
+        parse_dates=["arrival_date"],
+    )
+    seasonal_scorecard = pd.read_csv(
+        data_path("seasonal_occupancy_scorecard.csv", TABLES_DIR / "seasonal_occupancy_scorecard.csv")
+    )
+    forecasting_history = pd.read_csv(
+        data_path("forecasting_input_monthly.csv", PROCESSED_DIR / "forecasting_input_monthly.csv"),
+        parse_dates=["ds"],
+    )
+    booking_forecast = pd.read_csv(
+        data_path("booking_demand_forecast.csv", FORECAST_DIR / "booking_demand_forecast.csv"),
+        parse_dates=["ds"],
+    )
+    occupancy_forecast = pd.read_csv(
+        data_path("occupancy_rate_forecast.csv", FORECAST_DIR / "occupancy_rate_forecast.csv"),
+        parse_dates=["ds"],
+    )
+    revenue_forecast = pd.read_csv(data_path("revenue_forecast.csv", FORECAST_DIR / "revenue_forecast.csv"), parse_dates=["ds"])
+    forecast_metrics = json.loads(
+        data_path("forecast_accuracy_metrics.json", FORECAST_DIR / "forecast_accuracy_metrics.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    kpis = json.loads(data_path("kpi_summary.json", INSIGHTS_DIR / "kpi_summary.json").read_text(encoding="utf-8"))
     return {
         "bookings": bookings,
         "monthly": monthly,
@@ -103,6 +138,7 @@ def load_data() -> dict[str, pd.DataFrame | dict]:
         "personas": personas,
         "revenue_plan": revenue_plan,
         "seasonal_scorecard": seasonal_scorecard,
+        "forecasting_history": forecasting_history,
         "booking_forecast": booking_forecast,
         "occupancy_forecast": occupancy_forecast,
         "revenue_forecast": revenue_forecast,
@@ -500,7 +536,7 @@ def demand_forecasting(data: dict, bookings: pd.DataFrame, monthly: pd.DataFrame
         "Forward-looking booking demand, occupancy, and revenue forecasts with holdout accuracy metrics.",
     )
 
-    history = pd.read_csv(PROCESSED_DIR / "forecasting_input_monthly.csv", parse_dates=["ds"])
+    history = data["forecasting_history"]
     metrics = data["forecast_metrics"]
 
     metric_cols = st.columns(3)

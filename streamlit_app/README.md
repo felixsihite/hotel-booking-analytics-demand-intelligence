@@ -14,13 +14,16 @@ Streamlit Cloud main file path:
 streamlit_app/app.py
 ```
 
-The app uses generated analytical outputs from:
+The app uses a compact deployment data package from:
 
-- `data/processed/`
-- `outputs/tables/`
-- `outputs/forecasts/`
-- `outputs/insights/`
+- `streamlit_app/data/`
 
-Run `python scripts/run_pipeline.py` first if these files need to be regenerated locally. Install `requirements-dev.txt` before regenerating the full pipeline.
+Refresh the compact package with:
+
+```bash
+python scripts/build_streamlit_data.py
+```
+
+Run `python scripts/run_pipeline.py` first if the full local analytics outputs need to be regenerated. Install `requirements-dev.txt` before regenerating the full pipeline.
 
 The app is the primary portfolio interface for this project. No separate static web front end or external dashboard tool is required.

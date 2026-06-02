@@ -1,6 +1,6 @@
 # Hotel Booking Analytics & Demand Intelligence
 
-Enterprise hospitality analytics portfolio project built with Python, SQL, Prophet forecasting, and a premium Streamlit analytics application.
+Enterprise hospitality analytics portfolio project built with Python, SQL, forecasting, and a premium Streamlit analytics application.
 
 Dataset source: [Hotel Booking Demand Dataset on Kaggle](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
 
@@ -28,76 +28,88 @@ This repository is designed for Data Analyst, Business Intelligence Analyst, Rev
 
 Capability signal:
 
-- Python analytics and data engineering: 45%
-- SQL business intelligence: 30%
+- Python analytics and data engineering: 40%
+- SQL business intelligence: 35%
 - Streamlit analytics application and forecasting storytelling: 25%
 
 ## Repository Structure
 
 ```text
 hotel_booking_analytics_&_demand_intelligence/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── warehouse/
-├── docs/
-│   └── data_dictionary.md
-├── forecasting/
-│   ├── README.md
-│   └── forecast_reports/
-├── notebooks/
-├── outputs/
-│   ├── charts/
-│   ├── forecasts/
-│   ├── insights/
-│   ├── reports/
-│   └── tables/
-├── scripts/
-├── sql/
-├── streamlit_app/
-│   ├── .streamlit/
-│   ├── app.py
-│   └── README.md
-├── README.md
-├── requirements.txt
-├── environment.yml
-└── .gitignore
+|-- data/
+|   |-- raw/
+|   |-- processed/
+|   `-- warehouse/
+|-- docs/
+|   `-- data_dictionary.md
+|-- forecasting/
+|   |-- README.md
+|   `-- forecast_reports/
+|-- notebooks/
+|-- outputs/
+|   |-- charts/
+|   |-- forecasts/
+|   |-- insights/
+|   |-- reports/
+|   `-- tables/
+|-- scripts/
+|-- sql/
+|-- streamlit_app/
+|   |-- .streamlit/
+|   |-- data/
+|   |-- app.py
+|   `-- README.md
+|-- README.md
+|-- requirements.txt
+|-- requirements-dev.txt
+|-- environment.yml
+`-- .gitignore
 ```
 
 ## Analytics Workflow
 
 ```text
 Raw Hotel Booking Dataset
-↓
+|
+v
 Python Cleaning, Validation, and Feature Engineering
-↓
+|
+v
 Processed Analytical Tables and SQLite Warehouse
-↓
+|
+v
 SQL Business Intelligence Queries
-↓
+|
+v
 EDA, Segmentation, Cancellation Risk, Revenue Optimization
-↓
-Prophet / Seasonal Forecast Outputs
-↓
+|
+v
+Forecast Outputs
+|
+v
+Compact Streamlit Deployment Data Package
+|
+v
 Streamlit Executive Analytics Application
-↓
+|
+v
 Business Reports and Strategic Recommendations
 ```
 
 ## Key Deliverables
 
-- Cleaned booking dataset: `data/processed/hotel_bookings_cleaned.csv`
-- Monthly demand mart: `data/processed/monthly_demand.csv`
-- Forecasting dataset: `data/processed/forecasting_input_monthly.csv`
-- SQLite warehouse: `data/warehouse/hotel_booking_analytics.sqlite`
+- Python cleaning and feature engineering scripts: `scripts/`
 - SQL BI query suite: `sql/`
 - Python notebooks: `notebooks/`
 - Streamlit app: `streamlit_app/app.py`
+- Compact deployment data package: `streamlit_app/data/`
 - Data dictionary: `docs/data_dictionary.md`
 - Data quality report: `outputs/reports/data_quality_report.md`
 - Forecast reports: `forecasting/forecast_reports/`
 - Business reports: `outputs/reports/`
 - Executive insights: `outputs/insights/`
+
+Full raw, processed, and warehouse datasets are generated locally and intentionally excluded from GitHub to keep Streamlit Cloud deployment fast. See the README files inside `data/`.
 
 ## Run The Project
 
@@ -125,6 +137,12 @@ Regenerate the full analytical pipeline:
 python scripts/run_pipeline.py
 ```
 
+Refresh only the compact Streamlit deployment package:
+
+```bash
+python scripts/build_streamlit_data.py
+```
+
 Local dashboard URL:
 
 ```text
@@ -142,6 +160,8 @@ Main file path: streamlit_app/app.py
 ```
 
 `requirements.txt` is intentionally lightweight for faster Streamlit Cloud deployment. Full analytics dependencies are kept in `requirements-dev.txt` for local regeneration work.
+
+The deployed app reads from `streamlit_app/data/`, a compact app-ready package built from the full local analytical outputs. This keeps the GitHub repository professional, reproducible, and much faster to clone on Streamlit Cloud.
 
 ## Streamlit Application
 
@@ -241,4 +261,4 @@ The dataset does not include true room inventory. Occupancy and RevPAR are there
 
 ## Interview Summary
 
-Built a complete hospitality analytics ecosystem using Python, SQL, Prophet forecasting, and Streamlit to analyze booking demand, cancellations, customer segments, occupancy, and revenue opportunities. The project demonstrates data cleaning, feature engineering, business intelligence, segmentation, forecasting, executive dashboard design, and strategic revenue recommendations.
+Built a complete hospitality analytics ecosystem using Python, SQL, forecasting, and Streamlit to analyze booking demand, cancellations, customer segments, occupancy, and revenue opportunities. The project demonstrates data cleaning, feature engineering, business intelligence, segmentation, forecasting, executive dashboard design, and strategic revenue recommendations.

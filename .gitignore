@@ -23,6 +23,15 @@ Thumbs.db
 *.sqlite-shm
 *.sqlite-wal
 
+# Full local datasets and generated warehouse
+# Streamlit Cloud uses the compact app-ready package in streamlit_app/data/.
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+data/warehouse/*
+!data/warehouse/README.md
+
 # Local app/runtime artifacts
 .streamlit_server.pid
 *.log
