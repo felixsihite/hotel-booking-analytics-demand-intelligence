@@ -1,4 +1,4 @@
-name: hotel-booking-analytics
+name: hotel-booking-analytics-dev
 channels:
   - conda-forge
 dependencies:

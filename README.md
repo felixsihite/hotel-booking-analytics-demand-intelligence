@@ -62,7 +62,8 @@ hotel_booking_analytics_&_demand_intelligence/
 |-- README.md
 |-- requirements.txt
 |-- requirements-dev.txt
-|-- environment.yml
+|-- environment-dev.yml
+|-- runtime.txt
 `-- .gitignore
 ```
 
@@ -160,6 +161,8 @@ Main file path: streamlit_app/app.py
 ```
 
 `requirements.txt` is intentionally lightweight for faster Streamlit Cloud deployment. Full analytics dependencies are kept in `requirements-dev.txt` for local regeneration work.
+
+`environment-dev.yml` is provided only for local Conda-based development. It is intentionally not named `environment.yml` so Streamlit Cloud does not build the heavier forecasting environment during app deployment.
 
 The deployed app reads from `streamlit_app/data/`, a compact app-ready package built from the full local analytical outputs. This keeps the GitHub repository professional, reproducible, and much faster to clone on Streamlit Cloud.
 
