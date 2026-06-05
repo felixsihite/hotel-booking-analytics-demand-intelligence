@@ -2,6 +2,8 @@
 
 Enterprise hospitality analytics portfolio project built with Python, SQL, forecasting, and a premium Streamlit analytics application.
 
+Live Streamlit dashboard: [Hotel Booking Analytics & Demand Intelligence](https://hotel-booking-analytics-demand-intelligence-2zkx3qz693mbdtcua3.streamlit.app/)
+
 Dataset source: [Hotel Booking Demand Dataset on Kaggle](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
 
 ## Project Summary
@@ -151,6 +153,12 @@ http://localhost:8501
 ```
 
 ## Streamlit Cloud Deployment
+
+Live app:
+
+```text
+https://hotel-booking-analytics-demand-intelligence-2zkx3qz693mbdtcua3.streamlit.app/
+```
 
 Use these settings in Streamlit Cloud:
 
